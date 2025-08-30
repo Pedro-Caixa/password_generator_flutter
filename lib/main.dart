@@ -1,4 +1,3 @@
-import 'package:aula_05/tasklist.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -21,15 +20,22 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tasks = <Task>[
-      //Task(label: 'Printar piadocas'),
-      //Task(label: 'enviar memes'),
-      //Task(label: 'Adicionar'),
-    ];
-
     return Scaffold(
       appBar: AppBar(title: const Text('Planejador!')),
-      body: Column(children: [TaskList(tasks: tasks)]),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: const InputDecoration(
+                labelText: 'Nova tarefa',
+
+                border: OutlineInputBorder(),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
