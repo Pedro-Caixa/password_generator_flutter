@@ -1,9 +1,23 @@
-class Password {
-  String _seed = '';
-  int _charMin = 8;
-  int _charMax = 20;
-  bool _hasUppercase = false;
-  bool _hasLowercase = false;
-  bool _hasDigits = false;
-  bool _hasSpecialCharacters = false;
+class PasswordOptions {
+  String service;
+  String passphrase;
+  int length;
+  String? username;
+  String? year;
+  bool useUppercase;
+  bool useNumbers;
+  bool useSymbols;
+  String? method;
+
+  PasswordOptions({
+    required this.service,
+    required this.passphrase,
+    required this.length,
+    this.username,
+    this.year,
+    this.useUppercase = true,
+    this.useNumbers = true,
+    this.useSymbols = true,
+    this.method = 'md5',
+  }) : assert(length > 8 && length <= 32, 'Deve ter entre 8 e 32 caracteres');
 }
