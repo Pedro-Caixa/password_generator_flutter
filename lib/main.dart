@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import '../views/user_view.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -8,34 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'TO-DO!',
+      debugShowCheckedModeBanner: false,
+      title: 'Password Generator',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Planejador!')),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              decoration: const InputDecoration(
-                labelText: 'Nova tarefa',
-
-                border: OutlineInputBorder(),
-              ),
-            ),
-          ),
-        ],
-      ),
+      home: const PasswordView(),
     );
   }
 }
